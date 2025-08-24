@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padakkalam: Shadow Pixel Fight</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="start-screen">
+        <div class="start-content">
+            <h1 class="game-title">🥊 Padakkalam: Shadow Pixel Fight 🥊</h1>
+            <div class="game-rules">
+                <h2>Game Rules:</h2>
+                <ul>
+                    <li>🎮 Use Arrow Keys or WASD to move</li>
+                    <li>⚡ Press SPACE to attack</li>
+                    <li>🛡️ Get 3-hit combo for Shaaji Mode shield</li>
+                    <li>🎯 Press L or Lifeline button for special moves</li>
+                    <li>❤️ Mass Bunk: Damage professor</li>
+                    <li>🍽️ Canteen Strike: Restore health</li>
+                    <li>🏆 First to zero health loses!</li>
+                </ul>
+            </div>
+            <button id="startButton" class="start-btn">Start Fighting!</button>
+        </div>
+    </div>
+
+    <div id="gameContainer" class="hidden">
+        <!-- Health Bars -->
+        <div id="healthBars">
+            <div id="jithinHealth">
+                <div class="healthLabel">
+                    <img src="assets/heart.png" alt="♥" class="heartIcon">
+                    <span>Jithin</span>
+                </div>
+                <div class="healthBar">
+                    <div class="healthFill" id="jithinHealthFill"></div>
+                </div>
+                <span class="healthPercent" id="jithinHealthPercent">100%</span>
+            </div>
+            
+            <div id="renjithHealth">
+                <div class="healthLabel">
+                    <img src="assets/heart.png" alt="♥" class="heartIcon">
+                    <span>Renjith</span>
+                </div>
+                <div class="healthBar">
+                    <div class="healthFill" id="renjithHealthFill"></div>
+                </div>
+                <span class="healthPercent" id="renjithHealthPercent">100%</span>
+            </div>
+        </div>
+
+        <!-- Lifeline Button -->
+        <div id="lifelineButton" class="gameButton">
+            <img src="assets/lifeline.png" alt="Lifeline">
+        </div>
+
+        <!-- Lifeline Popup -->
+        <div id="lifelinePopup" class="popup hidden">
+            <div class="popup-content">
+                <h3>Choose Lifeline:</h3>
+                <div class="lifeline-options">
+                    <button id="massBunkBtn" class="lifeline-btn">
+                        <img src="assets/mass_bunk.png" alt="Mass Bunk">
+                        <span>Mass Bunk (1)</span>
+                    </button>
+                    <button id="canteenStrikeBtn" class="lifeline-btn">
+                        <img src="assets/canteen_strike.png" alt="Canteen Strike">
+                        <span>Canteen Strike (1)</span>
+                    </button>
+                </div>
+                <button id="closePopup" class="close-btn">×</button>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Mobile Controls -->
+        <div id="mobileControls" class="mobile-only">
+            <!-- Joystick -->
+            <div id="joystick" class="joystick">
+                <div id="joystickKnob" class="joystick-knob"></div>
+            </div>
+            
+            <!-- Attack Button -->
+            <div id="attackButton" class="attack-button">
+                <img src="assets/sword.png" alt="Attack">
+            </div>
+        </div>
+
+        <!-- Game Messages -->
+        <div id="gameMessage" class="game-message hidden"></div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over hidden">
+            <h2 id="gameOverText">Game Over!</h2>
+            <button id="restartButton" class="restart-btn">Play Again</button>
+        </div>
+
+        <!-- Desktop Controls Info -->
+        <div id="desktopControls" class="desktop-only controls-info">
+            <p>Arrow Keys: Move | Space: Attack | L: Lifelines</p>
+        </div>
+    </div>
+
+    <script src="phrases/phrases.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
